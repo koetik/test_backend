@@ -1,0 +1,396 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Dokumentasi API",
+        "description": "Test Backend Developer",
+        "contact": {
+            "email": "koetik@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://test-backend.test/api",
+            "description": "Demo API Server"
+        }
+    ],
+    "paths": {
+        "/approval-stages": {
+            "post": {
+                "tags": [
+                    "Approval Stage"
+                ],
+                "description": "Menyimpan data Approval Stage",
+                "operationId": "131fda46f87a1abfd3b19e563547a42c",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "approver_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "approver_id": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "success": true,
+                                    "message": "Data Berhasil ditambahkan",
+                                    "data": [
+                                        {
+                                            "id": "1",
+                                            "approver_id": "1",
+                                            "created_at": "2022-01-01T00:00:00.000000Z",
+                                            "updated_at": "2022-01-01T00:00:00.000000Z"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/approval-stages/{id}": {
+            "put": {
+                "tags": [
+                    "Approval Stage"
+                ],
+                "description": "Mengubah data Approval Stage",
+                "operationId": "ded95f09e7c10d8622a75bec3a23c7ef",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Parameter approval id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "An int value.",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "approver_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "approver_id": "2"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "success": true,
+                                    "message": "Data Berhasil diubah",
+                                    "data": [
+                                        {
+                                            "id": "1",
+                                            "approver_id": "2",
+                                            "created_at": "2022-01-01T00:00:00.000000Z",
+                                            "updated_at": "2022-01-01T00:00:00.000000Z"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/approver": {
+            "post": {
+                "tags": [
+                    "Approver"
+                ],
+                "description": "Menyimpan data Approver",
+                "operationId": "4f19ef876759a86fd8feb32fd70193b0",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "Ani"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "success": true,
+                                    "message": "Data Berhasil ditambahkan",
+                                    "data": [
+                                        {
+                                            "id": "1",
+                                            "name": "Ani",
+                                            "created_at": "2022-01-01T00:00:00.000000Z",
+                                            "updated_at": "2022-01-01T00:00:00.000000Z"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/expenses/{id}": {
+            "get": {
+                "tags": [
+                    "Expenses"
+                ],
+                "description": "Get Expenses By Id",
+                "operationId": "b8d5c673ecdbb6a51bea7ec7cc5d0e30",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Parameter expense id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "An int value.",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "success": true,
+                                    "message": "Data Berhasil diapprove",
+                                    "data": [
+                                        {
+                                            "id": "1",
+                                            "amount": "1",
+                                            "status_id": "1",
+                                            "created_at": "2022-01-01T00:00:00.000000Z",
+                                            "updated_at": "2022-01-01T00:00:00.000000Z",
+                                            "approval": [
+                                                {
+                                                    "id": "1",
+                                                    "approver_id": "1",
+                                                    "status_id": "2",
+                                                    "created_at": "2022-01-01T00:00:00.000000Z",
+                                                    "updated_at": "2022-01-01T00:00:00.000000Z",
+                                                    "approver": {
+                                                        "id": "1",
+                                                        "name": "Admin"
+                                                    },
+                                                    "status": {
+                                                        "id": "2",
+                                                        "name": "Disetujui"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/expenses": {
+            "post": {
+                "tags": [
+                    "Expenses"
+                ],
+                "description": "Menyimpan data Expenses",
+                "operationId": "927e29ac31ae983af0a55ce5d487d554",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "amount": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "amount": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "success": true,
+                                    "message": "Data Berhasil ditambahkan",
+                                    "data": [
+                                        {
+                                            "id": "1",
+                                            "amount": "1",
+                                            "status_id": "1",
+                                            "created_at": "2022-01-01T00:00:00.000000Z",
+                                            "updated_at": "2022-01-01T00:00:00.000000Z"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/expenses/{id}/approve": {
+            "patch": {
+                "tags": [
+                    "Expenses"
+                ],
+                "description": "Expenses Approval",
+                "operationId": "c4e7637a38fcbdb86a5050292281c826",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Parameter expense id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "int": {
+                                "summary": "An int value.",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "approver_id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "approver_id": "1"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "example": {
+                                    "success": true,
+                                    "message": "Data Berhasil diapprove",
+                                    "data": [
+                                        {
+                                            "id": "1",
+                                            "amount": "1",
+                                            "status_id": "1",
+                                            "created_at": "2022-01-01T00:00:00.000000Z",
+                                            "updated_at": "2022-01-01T00:00:00.000000Z",
+                                            "approval": [
+                                                {
+                                                    "id": "1",
+                                                    "approver_id": "1",
+                                                    "status_id": "2",
+                                                    "created_at": "2022-01-01T00:00:00.000000Z",
+                                                    "updated_at": "2022-01-01T00:00:00.000000Z",
+                                                    "approver": {
+                                                        "id": "1",
+                                                        "name": "Admin"
+                                                    },
+                                                    "status": {
+                                                        "id": "2",
+                                                        "name": "Disetujui"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Approval Stage",
+            "description": "Approval Stage"
+        },
+        {
+            "name": "Approver",
+            "description": "Approver"
+        },
+        {
+            "name": "Expenses",
+            "description": "Expenses"
+        }
+    ]
+}
